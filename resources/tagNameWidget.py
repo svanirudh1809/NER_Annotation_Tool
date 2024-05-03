@@ -1,7 +1,8 @@
-## Tag Name Widget (Custom widget)
+# Tag Name Widget (Custom widget)
 import sys
-from PyQt5 import QtCore, QtWidgets, uic
-from tagNameWidgetUI import Ui_Form
+from PyQt5 import QtCore, QtWidgets
+from .tagNameWidgetUI import Ui_Form
+
 
 class tagNameWidget(QtWidgets.QWidget, Ui_Form):
     def __init__(self, parent, *args, **kwargs):
@@ -30,20 +31,20 @@ class tagNameWidget(QtWidgets.QWidget, Ui_Form):
         # Tag Color
         self.color = color
         tagValue = "QToolButton{background-color: rgb(" + \
-                str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + \
-                ");" \
-                "font: 11pt 'Comic Sans MS';}" \
-                "QToolButton::Hover{" \
-                "background-color: rgb(" + \
-                str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + ", " + str(200) + \
-                ");" \
-                "}" \
-                "QToolButton::Checked{" \
-                "background-color: rgb(" + \
-                str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + ", " + str(200) + \
-                ");" \
-                "border-style: inset;" \
-                "}"
+                   str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + \
+                   ");" \
+                   "font: 11pt 'Comic Sans MS';}" \
+                   "QToolButton::Hover{" \
+                   "background-color: rgb(" + \
+                   str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + ", " + str(200) + \
+                   ");" \
+                   "}" \
+                   "QToolButton::Checked{" \
+                   "background-color: rgb(" + \
+                   str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + ", " + str(200) + \
+                   ");" \
+                   "border-style: inset;" \
+                   "}"
         self.tagName.setStyleSheet(tagValue)
 
     def get_color(self):
@@ -83,14 +84,14 @@ class tagNameWidget(QtWidgets.QWidget, Ui_Form):
 
             color = self.get_color()
             selectorValue = "QTextEdit{selection-background-color: rgb(" + \
-                       str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + \
-                       ");" \
-                       "selection-color: rgb(24, 24, 24);" \
-                       "background-color: rgb(22, 22, 23);" \
-                       "border-radius: 10px;" \
-                       "font: 14pt 'Comic Sans MS';" \
-                       "color: rgb(246, 255, 61);" \
-                       "padding: 15px;}"
+                            str(color[0]) + ", " + str(color[1]) + ", " + str(color[2]) + \
+                            ");" \
+                            "selection-color: rgb(24, 24, 24);" \
+                            "background-color: rgb(22, 22, 23);" \
+                            "border-radius: 10px;" \
+                            "font: 14pt 'Comic Sans MS';" \
+                            "color: rgb(246, 255, 61);" \
+                            "padding: 15px;}"
             self.parent.textSelector.setStyleSheet(selectorValue)
             self.parent.selectionColor = color
             self.parent.selectedTag = self.get_name()
@@ -124,7 +125,6 @@ class tagNameWidget(QtWidgets.QWidget, Ui_Form):
 
         self.parent.gridLayout_4.removeWidget(self)
         self.deleteLater()
-
 
 
 # Main

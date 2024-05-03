@@ -1,7 +1,8 @@
-## New Tag name setter (Custom Widget)
+# New Tag name setter (Custom Widget)
 import sys
 from PyQt5 import QtCore, QtWidgets, uic
-from tagSetterWidgetUI import Ui_Dialog
+from .tagSetterWidgetUI import Ui_Dialog
+
 
 class tagSetterWidget(QtWidgets.QDialog, Ui_Dialog):
     def __init__(self, *args, **kwargs):
