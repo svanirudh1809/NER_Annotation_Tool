@@ -29,4 +29,4 @@ This project was created by [S V Anirudh](https://www.linkedin.com/in/anirudhsv/
 
 Have fun in annotation! If you have any questions or feedback, feel free to reach out.  
 
-> This project was created 09/01/2023
+> This project was originally created on 09/01/2023
