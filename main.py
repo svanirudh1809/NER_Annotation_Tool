@@ -1,14 +1,14 @@
-## Main window
+# Main window
 import sys
 import os
 import json
 import random
-from PyQt5 import QtWidgets, uic, QtGui, QtCore
-from PyQt5.QtGui import QIcon, QTextCursor, QTextCharFormat, QColor
+from PyQt5 import QtWidgets, QtGui, QtCore
+from PyQt5.QtGui import QTextCursor, QTextCharFormat, QColor
 
-from mainWindow import Ui_MainWindow
-from tagNameWidget import tagNameWidget
-from tagSetterWidget import tagSetterWidget
+from resources.mainWindow import Ui_MainWindow
+from resources.tagNameWidget import tagNameWidget
+from resources.tagSetterWidget import tagSetterWidget
 
 
 class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -212,11 +212,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                     self.tempEnts[self.iter].append([selectionStart, selectionEnd, self.selectedTag])
 
                 try:
-                    pe = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonPress, QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
+                    pe = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonPress,
+                                           QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
                                            QtCore.Qt.LeftButton, QtCore.Qt.LeftButton, QtCore.Qt.NoModifier)
                     self.textSelector.mousePressEvent(pe)
 
-                    re = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonRelease, QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
+                    re = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonRelease,
+                                           QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
                                            QtCore.Qt.LeftButton, QtCore.Qt.LeftButton, QtCore.Qt.NoModifier)
                     self.textSelector.mouseReleaseEvent(re)
                 except Exception as e:
@@ -237,11 +239,13 @@ class MainWindow(QtWidgets.QMainWindow, Ui_MainWindow):
                         break
 
             try:
-                pe = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonPress, QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
+                pe = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonPress,
+                                       QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
                                        QtCore.Qt.LeftButton, QtCore.Qt.LeftButton, QtCore.Qt.NoModifier)
                 self.textSelector.mousePressEvent(pe)
 
-                re = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonRelease, QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
+                re = QtGui.QMouseEvent(QtCore.QEvent.MouseButtonRelease,
+                                       QtCore.QPointF(self.textSelector.width(), self.textSelector.height()),
                                        QtCore.Qt.LeftButton, QtCore.Qt.LeftButton, QtCore.Qt.NoModifier)
                 self.textSelector.mouseReleaseEvent(re)
             except Exception as e:
